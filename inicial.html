@@ -1,0 +1,465 @@
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Catamaran:400,500,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Overpass:300,400,500,700' rel='stylesheet' type='text/css'>
+    <style>
+        body{
+            margin: 0px;
+        }
+        
+        .header{
+            height: 708px;
+        }
+        
+        .menuicon{
+            display: none;
+        }
+            
+        .closebtn{
+            display: none;
+        }
+        
+        #menuName{
+            display: none;
+        }
+        
+        .menu a{
+            text-decoration: none;
+            font-family: 'Overpass';
+            font-weight:500;
+            font-size: 20px;
+            color: #787878;
+        }
+        
+        .menu img{
+            width: 29px;
+            height: 29px;
+        }
+        
+        .menu #selected{
+            color: #b8073e;
+        }
+        
+        .tableMenu{
+            float: right;
+            margin-right: 80px;
+            margin-top: 32px;
+        }
+        
+        .tableMenu a{
+	       margin-left: 56px; 
+        }
+        
+        #projects{
+            width: 100%;
+            background-color: #f0f0f0;
+        }
+        
+        #name{
+            font-family: 'Catamaran';
+            font-weight:800;
+            font-size: 66.7px;
+            color: #000000;
+            margin-left: 80px;
+            padding-top: 120px;
+        }
+        
+        .about{
+            width: 700px;
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 20px;
+            color: #000000;
+            margin-left: 80px;
+            margin-top: 32px;
+        }
+        
+        .about b{
+            font-family: 'Overpass';
+            font-weight: 700;
+            color: #B80A3E;
+        }
+        
+        .vSeparator{
+            height: 135px;
+            position: relative;
+            font-family: 'Catamaran';
+            font-weight: 700;
+            font-size: 28.3px;
+            color: #000000;
+            border-left: 2px solid #B80A3E;
+            margin-left: 80px;
+        }
+        
+        #graySep{
+            position: absolute;
+            top: -222px;
+            height: 222px;
+            margin-left: -2px;
+            border-left: 2px solid #787878;
+        }
+        
+        #proj{
+            height: 53px;
+            border-left: 8px solid #B80A3E;
+            margin-top: 78px;
+            position: absolute;
+            margin-left: -5px;
+            padding-left: 24px;
+            padding-top: 10px;
+        }
+        
+        .projContainer{   
+            margin-left: 13%;
+            margin-right: 10%;
+            margin-top: 152px;
+        }
+        
+        .cardSection {
+          width: 100%;
+          margin-top: -32px;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .infoCard {
+          position: relative;
+          width: 35%;
+          top: 63px;
+          background-color: #ffffff;
+          padding: 24px 141px 32px 24px;
+          border-radius: 5px;
+          max-height: 375px;
+        }
+        
+        #header {
+          font-family: 'Overpass';
+          font-weight:400;
+          font-size: 15px;
+          color: #505050;
+          margin-bottom: 48px;
+        }
+        
+        #title {
+          font-family: 'Overpass';
+          font-weight:700;
+          font-size: 31.5px;
+          color: #000000;
+          margin-bottom: 32px;
+        }
+        
+        #description {
+          width: 85%;
+          font-family: 'Overpass';
+          font-weight:300;
+          font-size: 15px;
+          color: #505050;
+          margin-bottom: 40px;
+        }
+        
+        .btnView a {
+          width: 71px;
+          padding: 12px 28px 12px 28px;
+          font-family: 'Overpass';
+          font-weight:400;
+          font-size: 14.5px;
+          color: #000000;
+          border: 1.5px solid #000000;
+          border-radius: 3px;
+          text-align: center;
+          text-decoration: none;
+        }
+        
+        .btnView a:hover {
+          width: 74px;
+          background-color: #B80A3E;
+          padding: 13.5px 29.5px 13.5px 29.5px;
+          font-family: 'Overpass';
+          font-weight:400;
+          font-size: 14.5px;
+          color: #ffffff;
+          border: none;
+          border-radius: 3px;
+          text-align: center;
+          text-decoration: none;
+        }
+        
+        .imgCard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            top: -342px;
+            left: 40%;
+            height: 352px;
+            width: 50%;
+            background-color: #FFAEC8;
+            border-radius: 5px;
+        }
+        
+        .imgCard img{
+            flex-shrink: 1;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 1000px) {
+            .about{
+                width: 90%;
+            }
+            
+            .projContainer{   
+                margin-top: 88px;
+            }
+            
+            .cardSection {
+              width: 100%;
+              margin-top: 48px;
+            }
+            
+            #header {
+              font-family: 'Overpass';
+              font-weight:400;
+              font-size: 14px;
+              color: #505050;
+              margin-bottom: 37px;
+              margin-left: 24px;
+            }
+            
+            #title {
+              font-family: 'Overpass';
+              font-weight:700;
+              font-size: 31.5px;
+              color: #000000;
+              margin-bottom: 32px;
+              margin-left: 24px;
+            }
+            
+            #description {
+              width: 85%;
+              font-family: 'Overpass';
+              font-weight:400;
+              font-size: 12.7px;
+              color: #505050;
+              margin-bottom: 40px;
+              margin-left: 24px;
+            }
+            
+            .btnView a {
+              width: 71px;
+              padding: 12px 28px 12px 28px;
+              font-family: 'Overpass';
+              font-weight:400;
+              font-size: 14.5px;
+              color: #000000;
+              border: 1.5px solid #000000;
+              border-radius: 3px;
+              text-align: center;
+              text-decoration: none;
+              margin-left: 24px;
+            }
+            .btnView a:hover {
+              width: 74px;
+              background-color: #B80A3E;
+              padding: 13.5px 29.5px 13.5px 29.5px;
+              font-family: 'Overpass';
+              font-weight:400;
+              font-size: 14.5px;
+              color: #ffffff;
+              border: none;
+              border-radius: 3px;
+              text-align: center;
+              text-decoration: none;
+              margin-left: 24px;
+            }
+            
+            .infoCard {
+              position: relative;
+              width: 100%;
+              top: 340px;
+              background-color: #ffffff;
+              padding: 0px;
+              padding-bottom: 40px !important;
+              padding-top: 72px !important;
+              border-radius: 5px;
+            }
+            
+            .imgCard {
+              position: relative;
+              top: -310px;
+              left: 0%;
+              height: 362px;
+              width: 100%;
+              background-color: #FFAEC8;
+              border-radius: 5px;
+              overflow: hidden;
+            }
+        }
+        
+         @media (max-width: 700px) {
+             .header{
+                 height: auto;
+                 padding-bottom: 26%;
+             }
+             
+            .about{
+                width: 70%;
+            }
+            
+            #graySep{
+                top: -63%;
+                height: 63%;
+            }
+             
+            #icon{
+                margin-top: 27px;
+                display: block;
+                margin-left: 40px;
+                width: 38px;
+                height: 26px;
+                cursor: pointer;
+             }
+             
+            .infoCard{
+                top: 210px;     
+            }
+             
+             .imgCard{
+                 height: 177px;
+             }
+             
+             button{
+                border: none;
+                background-color: #ffffff;
+             }
+             
+             .menuicon{
+                display: flex !important;
+                float: right;
+                margin-right: 16px;
+            }
+             
+             #menuName{
+                display: flex;
+                padding: 28px 16px 28px 35px;
+                font-family: 'Catamaran';
+                font-weight: 700;
+                font-size: 18px;
+                color: #000000;
+            }
+             
+             #mySidebar{
+                 display: none;
+             }
+             
+             .closebtn{
+                 border: none !important;
+                 padding: 0px !important;
+                 margin: 2px 0px 0px 24px !important;
+                 background-color: #dddddd;
+                 display: flex !important;
+                 font-size: 22px;
+             }
+             
+             .tableMenu{
+                background-color: #dddddd;
+                float: left;
+                margin-top: 0px;
+                position: fixed;
+                width: 365px;
+                height: 100%;
+                z-index: 10000;
+             }
+             
+             .tableMenu a{    
+                 padding: 0px 0 24px 12px;
+                 margin: 24px 0px 0px 24px;
+                 border-bottom: solid 1px #9d9d9d;
+                 text-decoration: none;
+                 font-size: 18px;
+                 color: #000000;
+                 display: block;
+                 transition: 0.3s;
+             }
+             
+             .tableMenu #enLink{
+                 border-bottom: none !important;
+             }
+             
+             .menu #selected{
+                border-bottom: solid 1px #9d9d9d;
+                padding-bottom: 24px;
+            }
+             
+            .projContainer{
+                padding-bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="menu"> 
+            <div class="menuicon" id="menuIcon">
+                <button class="openbtn" onclick="openNav()"><img id="icon" src="https://github.com/manubvf/assets_portfolio/blob/main/menuIcon.png?raw=true" alt="menu"/></button>
+            </div>
+            <div class="tableMenu" id="mySidebar">
+                <div id="menuName">Manoela Brandão Vicente Ferreira
+                    <button class="closebtn" onclick="closeNav()">×</button>
+                </div>
+              <a href="" id="selected">Projetos</a>
+              <a href="google.com">Sobre</a>
+              <a href="google.com">Contato</a>
+              <a href="google.com" id="enLink"><img src="https://github.com/manubvf/assets_portfolio/blob/main/usa.png?raw=true" alt="english version"></a>
+            </div>
+        </div>
+        <div id="name">Manoela Brandão Vicente Ferreira</div>
+        <div class="about">Sou uma <b>User Experience e User Interface Designer</b> atualmente estudante da Apple Developer Academy dedicada à criar experiências acessíveis capazes de transformar a vida e realizade das pessoas. Me interesso muito por assuntos relacionados à educação, artes e questões sociais.
+        <img>
+        </div>
+    </div>
+    <div id="projects">
+        <div class="vSeparator"><div id="graySep"></div><div id="proj">PROJETOS</div></div>
+        
+        <div class="projContainer">
+            <div class="cardSection">
+                    <div class="infoCard">
+                      <div id="header">2022  |  Apple Developer Academy</div>
+                      <div id="title">Marca-página</div>
+                      <div id="description">O Marca-página é um aplicativo com objetivo incentivar a leitura de livros que apresentem pluralidade tanto em suas histórias, através de personagens e narradores, quanto em seus autores e ilustradores.</div>
+                        <div class="btnView"><a href="#projects" id="">Saiba mais</a></div>
+                    </div>
+                    <div class="imgCard">
+                        <img src="https://github.com/manubvf/assets_portfolio/blob/main/thumb.png?raw=true" alt="a imagem apresenta o desenho rosa de um marcador de livros seguido do texto marca-página. Na parte inferior da imagem se encontram duas telas de celular: a primeira com o título de biblioteca e diversas capas de livro sendo exibidas em forma de lista horizontal; e a segunda com o título livros brasileiros e uma lista vertical com diversas capas de livros sobre um fundo com a ilustração de um mapa do brasil."/>
+                    </div>
+            </div>
+            
+            <div class="cardSection">
+                    <div class="infoCard">
+                      <div id="header">2022  |  Apple Developer Academy</div>
+                      <div id="title">Marca-página</div>
+                      <div id="description">O Marca-página é um aplicativo com objetivo incentivar a leitura de livros que apresentem pluralidade tanto em suas histórias, através de personagens e narradores, quanto em seus autores e ilustradores.</div>
+                        <div class="btnView"><a href="#projects" id="">Saiba mais</a></div>
+                    </div>
+                    <div class="imgCard">
+                        <img src="https://github.com/manubvf/assets_portfolio/blob/main/thumb.png?raw=true" alt="a imagem apresenta o desenho rosa de um marcador de livros seguido do texto marca-página. Na parte inferior da imagem se encontram duas telas de celular: a primeira com o título de biblioteca e diversas capas de livro sendo exibidas em forma de lista horizontal; e a segunda com o título livros brasileiros e uma lista vertical com diversas capas de livros sobre um fundo com a ilustração de um mapa do brasil."/>
+                    </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+</script>
+</body>
+</html>
+    
