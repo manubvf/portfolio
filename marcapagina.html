@@ -1,0 +1,1125 @@
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Catamaran:400,500,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Overpass:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:700" rel="stylesheet" type='text/css'>
+    <style>
+         html, body {
+            overflow-x: hidden;
+            margin: 0;
+        }
+        
+        #headerBg{
+            width: 100%;
+            height: 765px;
+            object-fit: cover;
+        }
+        
+        #headerPhoto{
+            position: absolute;
+            width: 883px;
+            margin-top: 88px;
+            margin-left: 80px;
+        }
+        
+        #logo a{
+            position: absolute;
+            font-family: 'Catamaran';
+            font-weight: 700;
+            font-size: 19px;
+            color: #000000;  
+            margin-top: 24px;
+            margin-left: 102px;
+            text-decoration: none;
+        }
+        
+        #icon{
+            margin-top: 28px;
+            display: block;
+            margin-left: 40px;
+            width: 34px;
+            height: 22px;
+            cursor: pointer;
+        }
+        
+         button{
+            border: none;
+            background: none;
+        }
+        
+        .menuicon{
+            position: absolute;
+            margin-right: 16px;
+        }
+             
+         #menuName{
+            display: flex;
+            padding: 28px 16px 28px 35px;
+            font-family: 'Catamaran';
+            font-weight: 700;
+            font-size: 18px;
+            color: #000000;
+        }
+             
+         #mySidebar{
+             display: none;
+         }
+             
+         .closebtn{
+             border: none !important;
+             padding: 0px !important;
+             margin: 2px 0px 0px 24px !important;
+             background-color: #dddddd;
+             display: flex !important;
+             font-size: 22px;
+         }
+        
+        .menu a{
+            text-decoration: none;
+            font-family: 'Overpass';
+            font-weight:500;
+            font-size: 20px;
+            color: #505050;
+        }
+        
+         
+        .menu img{
+            width: 29px;
+            height: 29px;
+        }
+             
+         .tableMenu{
+            background-color: #dddddd;
+            float: left;
+            margin-top: 0px;
+            position: fixed;
+            width: 365px;
+            height: 100%;
+            z-index: 10000;
+         }
+        
+        .tableMenu a{    
+             padding: 0px 0 24px 12px;
+             margin: 24px 0px 0px 24px;
+             border-bottom: solid 1px #9d9d9d;
+             text-decoration: none;
+             font-size: 18px;
+             color: #000000;
+             display: block;
+             transition: 0.3s;
+         }
+             
+         .tableMenu #enLink{
+             border-bottom: none !important;
+         }
+             
+         .menu #selected{
+            border-bottom: solid 1px #9d9d9d;
+            padding-bottom: 24px;
+         }
+        
+        
+        .datasheetBlock{
+            margin-top: 80px;
+        }
+        
+        #projTitle{
+            font-family: 'Overpass';
+            font-weight: 700;
+            font-size: 41.7px;
+            color: #000000;
+            margin-left: 80px;
+        }
+        
+        .overviewBlock{    
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 80px;
+        }
+        
+        .overviewBlock p{
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 19.2px;
+            color: #505050;  
+            width: 56%;
+            margin-top: 40px;
+        }
+        
+        .overviewBlock img{
+            height: 185px;
+            border-radius: 28px;
+            margin-top: -24px;
+            margin-right: 10%;
+        }
+        
+        .doubleColumn{    
+            margin: 88px 80px -16px 80px;
+            display: flex;
+            padding-right: 40px;
+            padding-bottom: 64px;
+            border-bottom: solid 1.5px #cccccc;
+        }
+        
+        #column1{
+            width: 45%;
+            min-width: 33%;
+        }
+        
+        #column2{
+            min-width: 54%; 
+            width: 72%;
+        }
+        
+        .columnBlock #title{
+            font-family: 'Catamaran';
+            font-weight: 700;
+            font-size: 23.3px;
+            color: #000000;  
+            margin-top: 40px;
+        }
+        
+        .columnBlock #content{
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 19.2px;
+            color: #505050;  
+            margin-left: 16px;
+        }
+        
+        .columnBlock p{
+            position: absolute;
+            margin-top: -32px;
+            left: 137px;
+            line-height: 30px;
+        }
+        
+        
+        .columnBlock ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+         
+        .columnBlock ul li {
+          position: relative;
+          padding: 0;
+          margin: 0;
+          padding-bottom: 4px;
+          padding-top: 12px;
+        }
+        
+        .transition, ul li i:before, ul li i:after, p {
+          transition: all 0.25s ease-in-out;
+        }
+
+        .flipIn, ul li, h1 {
+          animation: flipdown 0.5s ease both;
+        }
+
+        .no-select, h2 {
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        .columnBlock h1, .columnBlock h2 {
+          color: #931350;
+        }
+
+        .columnBlock h2 {
+          font-family: 'Overpass';
+          font-size: 18;
+          font-weight: 700;
+          line-height: 34px;
+          display: block;
+          background-color: #ffffff;
+          margin: 0;
+          cursor: pointer;
+        }
+
+        .columnBlock li p {
+          color: #505050;
+          font-family: 'Overpass';
+          font-size: 17;
+          font-weight: 300;
+          line-height: 22px;
+          position: initial;
+          overflow: hidden;
+          max-height: 800px;
+          opacity: 1;
+          transform: translate(0, 0);
+          margin-top: 8px;
+        }
+        
+        .columnBlock ul li:nth-of-type(1) {
+          animation-delay: 0.5s;
+        }
+        .columnBlock ul li:nth-of-type(2) {
+          animation-delay: 0.75s;
+        }
+        .columnBlock ul li:nth-of-type(3) {
+          animation-delay: 1s;
+        }
+        .columnBlock ul li:last-of-type {
+          padding-bottom: 0;
+        }
+        
+        .columnBlock ul li i {
+          position: absolute;
+          transform: translate(-6px, 0);
+          margin-top: 8px;
+          right: 0;
+        }
+        .columnBlock ul li i:before, ul li i:after {
+          content: "";
+          position: absolute;
+          background-color: #931350;
+          width: 3px;
+          height: 9px;
+        }
+        .columnBlock ul li i:before {
+          transform: translate(-2px, 0) rotate(45deg);
+        }
+        .columnBlock ul li i:after {
+          transform: translate(2px, 0) rotate(-45deg);
+        }
+        .columnBlock ul li input[type=checkbox] {
+          position: absolute;
+          cursor: pointer;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          opacity: 0;
+        }
+        .columnBlock ul li input[type=checkbox]:checked ~ p {
+          margin-top: 0;
+          max-height: 0;
+          opacity: 0;
+          transform: translate(0, 50%);
+        }
+        .columnBlock ul li input[type=checkbox]:checked ~ i:before {
+          transform: translate(2px, 0) rotate(45deg);
+        }
+        .columnBlock ul li input[type=checkbox]:checked ~ i:after {
+          transform: translate(-2px, 0) rotate(-45deg);
+        }
+
+        @keyframes flipdown {
+          0% {
+            opacity: 0;
+            transform-origin: top center;
+            transform: rotateX(-90deg);
+          }
+          5% {
+            opacity: 1;
+          }
+          80% {
+            transform: rotateX(8deg);
+          }
+          83% {
+            transform: rotateX(6deg);
+          }
+          92% {
+            transform: rotateX(-3deg);
+          }
+          100% {
+            transform-origin: top center;
+            transform: rotateX(0deg);
+          }
+        }
+        
+        
+        section{
+            margin-top: 96px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        
+        section h2{
+            font-family: 'Catamaran';
+            font-weight: 700;
+            font-size: 25px;
+            color: #931350;
+            margin: 0px;
+        }
+        
+        .contentPlain p{
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 17px;
+            color: #000000;
+            margin-top: 32px;
+        }
+        
+        .mainColor{
+            background: #C34B85;
+            color: #ffffff;
+            padding: 32px 80px 48px 80px;
+        }
+        
+        .mainColor h1{
+            font-family: 'Catamaran';
+            font-weight: 700;
+            font-size: 35.7px;
+            margin-left: 24px;
+            margin-right: 24px;
+        }
+        
+        .contentNumber #number{
+            font-family: 'Catamaran';
+            font-weight: 700;
+            font-size: 27.5px;
+            color: #931350;
+        }
+        
+        .contentNumber #itemTitle{
+            font-family: 'Catamaran';
+            font-weight: 700;
+            font-size: 21.7px;
+            color: #000000;
+            margin-left: 16px;
+        }
+        
+        .contentNumber .half p{
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 17px;
+            color: #000000;
+            margin: 6px 16px 0 16px;
+            padding: 10px 0 16px 24px;
+            border-left: solid 1.4px #CB6295;
+            width: 50%;
+        }
+        
+        .contentNumber .full p{
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 17px;
+            color: #000000;
+            margin: 6px 16px 0 16px;
+            padding: 10px 0 16px 24px;
+            border-left: solid 1.4px #CB6295;
+        }
+        
+        .contentNumber .quarter{
+            width: 49%;
+        }
+        
+        .contentNumber .quarter p{
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 17px;
+            color: #000000;
+            margin: 6px 16px 0 16px;
+            padding: 10px 0 16px 24px;
+            border-left: solid 1.4px #CB6295;
+        }
+        
+        .contentNumber li{
+            list-style: none;
+            margin-top: 72px;
+        }
+        
+        .contentNumber ul{
+            margin-top: -40px;
+        }
+        
+        section b{
+            font-family: 'Overpass';
+            font-weight: 700;
+            font-size: 17px;
+            color: #931350;
+        }
+        
+        .carousel{
+            
+        }
+        
+         .doubleImg{
+            position: absolute;
+            top: 140px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        
+        .doubleImg img{
+            width: 40%;
+        }
+        
+        .secondaryColor{
+            background: #E9E9E9;
+            color: #000000;
+            padding: 32px 80px 48px 80px;
+        }
+        
+       .ideationItems{
+            list-style: none;
+            margin-top: 74px;
+            display: flex;
+            padding: 0px;
+            gap: 3%;
+            justify-content: space-between;
+        }
+        
+        .ideationItems li{   
+            width: 235px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .ideationItems #subtitle{
+            font-family: 'Overpass';
+            font-weight: 700;
+            font-size: 17px;
+            color: #931350 !important;
+        } 
+       
+        .ideationItems li img{   
+            width: 118px;
+        }
+        
+        #featuresImg{
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 55px;
+        }
+        
+        #flowImg{
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 44px;
+            margin-bottom: 12px;
+        }
+        
+        #wireframeImg{
+            width: 100%;
+            margin-top: 44px;
+        }
+        
+        .imageSection{
+            padding: 0px;
+        }
+        
+        .imageSection img{
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        #typo{
+            margin-top: 0px !important;
+            font-family: 'Atkinson Hyperlegible';
+            font-weight: 700;
+            font-size: 2.7vw;
+            color: #931350;
+            padding-top: 24px;
+            padding-bottom: 33px;
+        }
+        
+        #paleta{
+            max-height: 180px;
+            object-fit: scale-down;
+        }
+        
+        #imgRight{
+            margin: 16px 0px 0px 80px;
+            width: 22%;
+            border-radius: 16px;
+        }
+                
+        .columnsImage{
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .contentSub{
+            margin-bottom: 96px;
+        }
+        
+        
+        .contentSub h2{
+            font-family: 'Catamaran';
+            font-weight: 700;
+            font-size: 25.0px;
+            color: #000000;
+            margin-left: 42px;
+            margin-top: 32px;
+        }
+        
+        #imgBiblio{
+            margin: 48px 0px 0px 42px;
+            width: 50%;
+        }
+        
+        .indicator{
+            display: flex;
+        }
+        
+        .indicator #left{
+            width: 22%;
+            height: fit-content;
+            margin-top: 13px;
+            margin-right: 20px;
+            min-width: 100px;
+        }
+        
+        .indicator p{
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 17px;
+            color: #000000;
+        }
+        
+        #medium{
+            width: 70%;
+        }
+        
+        .screenImg{
+            display: flex;
+        }
+        
+        #videoAtualizar{
+            width: 25%;
+            margin-top: 48px;
+        }
+        
+        .indicator #right{
+            width: 33%;
+            height: fit-content;
+            margin-top: 13px;
+            margin-right: 20px;
+            min-width: 100px;
+            transform: rotate(180deg);
+        }
+        
+        .contentSub #oneColumn{
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 17px;
+            color: #000000;
+            margin-top: 32px;
+            margin-left: 42px;
+        }
+        
+        .contentSub #twoColumn{
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 17px;
+            color: #000000;
+            margin-top: 32px;
+            margin-left: 42px;
+            width: 44%;
+        }
+        
+         #imgBusca{
+            margin: 48px 0px 0px 42px;
+            width: 80%;
+        }
+        
+        #sideIllustration{
+            width: 20%;
+            position: absolute;
+            right: -54px;
+            z-index: -1;
+        }
+        
+        #imgBrasil{
+            margin: 70px 0px 0px 42px;
+            width: 33%;
+            height: max-content;
+        }
+        
+        #imgTag{
+            margin: 70px 0px 0px 42px;
+            width: 70%;
+        }
+        
+        .listContent{
+            display: flex;
+            width: 64%
+        }
+        
+        #videoLista{
+            position: absolute;
+            right: 14%;
+            width: 24%;
+            margin-top: 4%;
+        }
+        
+        .rightContent{
+            position: absolute;
+            right: 0%;
+            margin-top: 4%;
+            width: 49%;
+        }
+        
+        #imgDetalhes{
+            width: 100%;
+        }
+        
+        #videoDetalhes{
+            margin: 70px 0px 0px 42px;
+            width: 25%;
+            height: max-content;
+        }
+        
+        .verticalIndicator{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .verticalIndicator #top{
+            width: 2%;
+            height: fit-content;
+            margin-top: 13px;
+            margin-right: 20px;
+        }
+        
+        .verticalIndicator p{
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 17px;
+            color: #000000;
+        }
+        
+        #imgPerfil{
+            margin: 48px 0px 0px 42px;
+            width: 25%;
+        }
+        
+        .contentPlainTwoColumn{
+            font-family: 'Overpass';
+            font-weight: 300;
+            font-size: 17px;
+            color: #000000;
+            margin-top: 60px;
+            margin-left: 0px;
+            width: 44%;
+        }
+        
+        #imgCHT{
+            margin: 53px 0px 0px 0px;
+            width: 45%;
+        }
+        
+        .columns{
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .trechosQuest{
+            position: absolute;
+            right: 6%;
+            width: 48%;
+            margin-top: -22%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        #imgEmilia{
+            width: 45%;
+            margin: 62% 0px 0px 0px;
+        }
+        
+        #videoML{
+            width: 45%;
+        }
+        
+        .footer{
+            
+        }
+        
+        @media (max-width: 1100px) {
+            body{
+                background-color: aqua;
+            }
+        }
+        
+         @media (max-width: 700px) {
+            body{
+                background-color: pink;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="menu">
+            <div class="menuicon" id="menuIcon">
+                <button class="openbtn" onclick="openNav()"><img id="icon" src="https://github.com/manubvf/assets_portfolio/blob/main/menuIcon.png?raw=true" alt="menu"/></button>
+            </div>
+            <div class="tableMenu" id="mySidebar">
+                    <div id="menuName">Manoela Brandão Vicente Ferreira
+                        <button class="closebtn" onclick="closeNav()">×</button>
+                    </div>
+                  <a href="" id="selected">Projetos</a>
+                  <a href="google.com">Sobre</a>
+                  <a href="google.com">Contato</a>
+                  <a href="google.com" id="enLink"><img src="https://github.com/manubvf/assets_portfolio/blob/main/usa.png?raw=true" alt="english version"></a>
+            </div>
+        </div>
+        <label id="logo"><a href="">Manoela Brandão Ferreira</a></label>
+        
+        <img id="headerPhoto" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/headerPhotos.png?raw=true" alt=""/>
+        <img id="headerBg" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/header.png?raw=true" alt=""/>
+    </div>
+    <div class="datasheetBlock">
+        <label id="projTitle">Marca-página</label>
+        <div class="overviewBlock">
+            <p>O Marca-página é um aplicativo iOS que tem como objetivo incentivar a leitura de livros que apresentem mais representatividade e diversidade tanto em suas histórias quanto em seus autores e ilustradores. Desta forma gostaríamos de aumentar a identificação dos leitores com as narrativas lidas promovendo um hábito de leitura mais saudável e variado.</p>
+            <img id="appIcon" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/mpIcon.png?raw=true" alt=""/>
+        </div>
+        <div class="doubleColumn">
+            <div class="columnBlock" id="column1">
+                <label id="title">DURAÇÃO:</label>
+                <label id="content">3 meses</label>
+                <div id="title">TIME:</div>
+                <p id="content">Anna Carolina Rodrigues<br/>
+                    Lucio Bueno Vieira Jr.<br/>
+                    Manoela Brandão Ferreira<br/>
+                    Nathan Batista de Oliveira<br/>
+                    Rafael Custodio Silva<br/>
+                    Vitor Sousa Balista</p>
+            </div>
+            <div class="columnBlock" id="column2">
+                <label id="title">CONTRIBUIÇÕES:</label>
+                <ul>
+                  <li>
+                    <input type="checkbox">
+                    <i></i>
+                    <h2>User Experience Design</h2>
+                    <p>Como UX Designer, meu trabalho envolveu identificar as principais dores de leitores em relação ao acesso e leitura de livros com diversidade, de forma a criar uma experiência acessível a todos e que conseguisse não só despertar o interesse, mas manter o engajamento dos usuários na leitura de tais livros. Também fui a responsável pelo design da feature de aviso de trechos questionáveis em livros, com o objetivo de incentivar a leitura crítica de tais obras, ao invés de censurá-las.</p>
+                  </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>User Interface Design</h2>
+                    <p>Fui a responsável por desenvolver o design visual das features de detalhes do livro e aviso sobre trechos questionáveis, procurando gerar no usuário o interesse pela leitura crítica das obras. Criei também as telas de: busca, listas de diversidade e perfil, promovendo a visualização da diversidade na leitura dos usuários.</p>
+                  </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Ilustrações e Identidade visual</h2>
+                    <p>Trabalhei no desenvolvimento da identidade visual do aplicativo juntamente com a designer Anna Carolina e fui responsável pela criação do logo e app icon com base nos valores que definimos para o projeto. Também determinei o estilo das ilustrações utilizadas no aplicativo e criei parte delas.</p>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <section>
+        <h2>CONTEXTO</h2>
+        <div class="contentPlain">
+            <p>Livros são capazes de transformar a forma como vemos o mundo, nos fazendo refletir através de diferentes perspectivas e novas informações adquiridas, de forma que a qualidade e diversidade das histórias que lemos são essenciais para revolucionar tanto nossas vidas quanto o mundo em que vivemos.
+            <br/><br/>
+            Partindo de uma demanda que surgiu dos próprios integrantes do time, que sentiam falta de ler livros com os quais conseguiam se identificar por possuírem representatividade de gênero, racial e sexual, nos empenhamos em entender e tentar solucionar os empecilhos que tornam a leitura de livros diversos mais incomum.</p>
+        </div>
+    </section>
+    <section class="mainColor">
+        <h2 style="color:#ffffff">ESSENTIAL QUESTION</h2>
+        <h1>Como nós podemos promover a leitura de livros com mais diversidade em suas histórias e autores?</h1>
+    </section>
+    <section>
+        <h2>IMERSÃO</h2>
+        <div class="contentNumber">
+            <ul>
+                <li class="half">
+                    <label id="number">01.</label>
+                    <label id="itemTitle">Pesquisas e entrevistas</label>
+                    <p>O primeiro passo em nossa fase de imersão envolveu a entrevista com possíveis usuários para entender seus hábitos de leitura e identificar os interesses e dores relacionadas à leitura de livros com diferentes representatividades. Chegamos a conclusão que:
+                    <br/><br/>
+                    <b>A maior parte das pessoas não têm conhecimento da existência ou fácil acesso à indicações de livros com diferentes representatividades e por este motivo sentem dificuldade em incluir em suas listas de leituras tais obras, de forma que leem mais recorrentemente best sellers e livros que possuem maior divulgação em plataformas como a Amazon.</b>
+                    </p>
+                    <!--<div class="carousel">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/carousel/cor.png?raw=true" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/carousel/sexo.png?raw=true" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/carousel/ocupacao.png?raw=true" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/carousel/sexualidade.png?raw=true" alt="">
+                                </li>
+                            </ul>
+                      </div>
+                    </div>-->
+                </li>
+                <li class="full">
+                    <label id="number">02.</label>
+                    <label id="itemTitle">Personas e mapas de empatia</label>
+                    <p style="padding-bottom: 44%;">Através das entrevistas realizadas, obtemos 5 personas que tiveram seus mapas de empatia desenvolvidos como forma de identificar suas reais intenções, comportamentos e dores relacionadas ao hábito de leitura.</p>
+                    <div class="doubleImg">
+                        <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/personas.png?raw=true" alt="">
+                        <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/mapa.png?raw=true" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="secondaryColor">
+        <h2 style="color:#000000">IDEAÇÃO</h2>
+        <div class="contentPlain">
+            <p>No decorrer do processo de imersão levantamos os seguintes pontos que deveríamos abordar em nossa solução para a essential question proposta:</p>
+        </div>
+        <ul class="ideationItems">
+            <li>
+                <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/icone1.png?raw=true"/>
+                <p id="subtitle">Falta de conhecimento sobre livros com representatividade.</p>
+            </li>
+            <li>
+                <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/icone2.png?raw=true" alt=""/>
+                <p id="subtitle">Dificuldade em manter o interesse pela leitura a longo prazo.</p>
+            </li>
+            <li>
+                <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/icone3.png?raw=true" alt=""/>
+                <p id="subtitle">Desorganização durante a leitura.</p>
+            </li>
+            <li>
+                <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/icone4.png?raw=true" alt=""/>
+                <p id="subtitle">Falta de um app com catalogação e indicações de livros mais diversos.</p>
+            </li>
+            <li>
+                <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/icone5.png?raw=true" alt=""/>
+                <p id="subtitle">Falta de visualização da diversidade nos livros lidos.</p>
+            </li>
+        </ul>
+        <div class="contentPlain">
+         <p>O que motivou a concepção das seguintes features para o aplicativo:</p>
+        </div>
+        <img id="featuresImg" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/MVP.png?raw=true" alt=""/>
+    </section>
+    <section>
+        <h2>FLUXO DE NAVEGAÇÃO</h2>
+        <div class="contentPlain">
+            <p>Começamos a fase de implementação definindo o fluxo de navegação do aplicativo envolvendo todas as features definidas, não apenas as features do MVP, de forma que pudéssemos ter uma visão geral e bem mais completa do produto final que gostaríamos de desenvolver.</p>
+        </div>
+        <img id="flowImg" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/flow.png?raw=true" alt=""/>
+        <div class="contentPlain">
+            <p>Para chegar ao fluxo de navegação final utilizamos algumas referências encontradas durante o benchmark e a própria organização que alguns entrevistados citaram durante nosso processo de imersão.</p>
+        </div>
+    </section>
+    <section>
+        <h2>WIREFRAMES</h2>
+        <div class="contentPlain">
+            <p>Após a definição do fluxo de navegação trabalhamos na criação dos wireframes das telas necessárias para o app.</p>
+        </div>
+        <img id="wireframeImg" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/wireframes.png?raw=true" alt=""/>
+    </section>
+    <section>
+        <h2>STYLE GUIDE</h2>
+        <div class="contentPlain">
+            <p>Após a definição do fluxo de navegação trabalhamos na criação dos wireframes das telas necessárias para o app.</p>
+        </div>
+        <div class="contentNumber">
+            <ul style="display: flex;gap: 32px;">
+                <li class="quarter">
+                    <label id="number">01.</label>
+                    <label id="itemTitle">Paleta de cores</label>
+                    <p><img id="paleta" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/paleta.png?raw=true" alt=""/>
+                    </p>
+                </li>
+                <li class="quarter">
+                    <label id="number">02.</label>
+                    <label id="itemTitle">Tipografia</label>
+                    <p>Com o objetivo de tornar o aplicativo o mais acessível possível, utilizamos a fonte Atkinson Hyperlegible desenvolvida pelo Braille Institute of America, a qual tem um design focado na distinção do formato das letras para aumentar a legibilidade dos textos.</p>
+                    <p id="typo">Histórias marcam o mundo.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="contentNumber">
+            <ul>
+                <li class="half">
+                    <label id="number">03.</label>
+                    <label id="itemTitle">App Icon e Logotipo</label>
+                    <div class="columnsImage">
+                        <p>Para o App Icon e logotipo da marca trabalhei em cima do objeto marca-página e do formato da letra M, usando uma combinação de tons de rosa em degradê para um ar mais inspirador e moderno. A fonte utilizada no logotipo foi Josefin Sans por Santiago Orozco.
+                        <br/><br/>
+                        <img style="width: 100%;" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/logo%20completo.png?raw=true" alt=""/>
+                        </p>
+                        <img id="imgRight" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/mpIcon.png?raw=true" alt=""/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="imageSection">
+        <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/section.jpg?raw=true" alt=""/>
+    </section>
+    <section>
+        <h2>PROTÓTIPO DE ALTA FIDELIDADE</h2>
+        <div class="contentSub">
+            <h2>Biblioteca</h2>
+            <div class="screenImg">
+                <img id="imgBiblio" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/biblio.png?raw=true" alt=""/>
+                <div class="indicator" style="margin: 270px 0px 0px 25px;">
+                    <img id="left" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/indicador.png?raw=true" alt=""/>
+                    <p id="medium">A biblioteca é onde o usuário tem acesso aos seus livros em progresso, que quer ler e já leu.</p>
+                </div>
+            </div>
+        </div>
+        <div class="contentSub">
+            <h2>Atualização de progresso na leitura</h2>
+            <div class="screenImg">
+                <div class="indicator" style="margin: 127px 0px 0px 38px;">
+                    <p id="medium" style="margin-right: 5%;">É possível atualizar o progresso das obras sendo lidas atualmente conforme a leitura avança.</p>
+                    <img id="right" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/indicador.png?raw=true" alt=""/>
+                </div>
+                <video id="videoAtualizar" autoplay muted loop>
+                  <source src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/Untitled.mp4?raw=true" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="indicator" style="margin: 250px 0px 0px 20px;">
+                    <img id="left" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/indicador.png?raw=true" alt=""/>
+                    <p id="medium">O Marca-página é compatível com múltiplos formatos de leitura, permitindo que o usuário escolha atualizar seu progresso conforme o <b>número de páginas</b> ou <b>porcentagem lida</b> (no caso de livros físicos e e-books) ou até mesmo o <b>número de horas ouvidas</b> em audiobooks.</p>
+                </div>
+            </div>
+        </div>
+        <div class="contentSub" style="margin-bottom: 120px;">
+            <h2>Busca</h2>
+             <div id="oneColumn">
+                <p>A busca pode ser realizada tanto pelo autor do livro quanto pelo título da obra.</p>
+            </div>
+            <div class="screenImg" style="justify-content: center;">
+                <img id="imgBusca" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/Busca.png?raw=true" alt=""/>
+            </div>
+        </div>
+        <div class="contentSub" style="margin-bottom: 120px;">
+            <img id="sideIllustration" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/sideIllustration.png?raw=true" alt=""/>
+            <video id="videoLista" autoplay muted loop>
+                <source src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/listaDiv.mp4?raw=true" type="video/mp4">
+                 Your browser does not support the video tag.
+            </video>
+            <h2>Lista de diversidades</h2>
+            <div id="twoColumn">
+                <p>Um dos problemas identificados em nosso processo de imersão foi a falta de conhecimento sobre livros com diversidade por parte do público leitor. Como forma de solucionar o problema a feature de lista de diversidade foi desenvolvida, disponibilizando listas temáticas com obras que abordam, representam ou são produzidas por representantes de minorias sociais.</p>
+            </div>
+            <div class="listContent">
+                <img id="imgBrasil" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/listaBrasil.png?raw=true" alt=""/>
+                <div style="width: 67%;">
+                    <img id="imgTag" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/tag.png?raw=true" alt=""/>
+                    <div class="indicator" style="margin: 17px 0px 0px 20px; width: 70%;">
+                        <img id="left" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/indicador.png?raw=true" alt=""/>
+                        <p id="medium">A curadoria das 10 obras presentes em cada lista é cuidadosamente feita levando em conta vários aspectos do livro: seus autores e ilustradores, as pessoas envolvidas em sua produção, sua temática e a representatividade em seus personagens.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contentSub"  style="margin-bottom: 120px;">
+            <div class="rightContent">
+                <div class="indicator " style="margin: 24% 0px 0px -24%;width: 52%;">
+                        <p id="medium">Livros apresentam muitos detalhes técnicos, então optamos pela visualização opcional para evitar sobrecarregar visualmente a tela.</p>
+                        <img id="right" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/indicador.png?raw=true" alt=""/>
+                </div>
+                <div style="width: 40%;position: absolute;top: 15%;right: 33%;">
+                    <img id="imgDetalhes" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/comenta%CC%81rios.png?raw=true" alt=""/>
+                    <div class="verticalIndicator " style="margin: 25px 0px 0px -49%;width: 207%;">
+                        <img id="top" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/verticalIndicador.png?raw=true" alt=""/>
+                        <p id="medium">Os usuários conseguem fazer comentários sobre os livros e eventualmente marcar trechos em que falam spoilers para serem ocultos dos demais usuários.</p>
+                    </div>
+                </div>
+            </div>
+            <h2>Detalhes do livro</h2>
+            <div id="twoColumn">
+                <p>As principais informações de um livro ficam em sua página de detalhes, de forma que o usuário consegue, além de ter acesso a elas, marcar a obra com um novo status: <b>Quero ler, Já li e Estou lendo.</b></p>
+            </div>
+            <video id="videoDetalhes" autoplay muted loop>
+                <source src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/detalhes.mp4?raw=true" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="contentSub" style="margin-bottom: 120px;">
+            <h2>Perfil</h2>
+             <div id="oneColumn">
+                <p>Em sua página de perfil o usuário tem acesso as configurações onde pode selecionar quais seções do aplicativo ele deseja exibir, colocando em suas mãos o poder de ocultar gráficos ou metas que o deixam desconfortável ou ansioso.</p>
+            </div>
+            <div class="screenImg">
+                <img id="imgPerfil" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/perfil.png?raw=true" alt=""/>
+                <div class="indicator" style="margin: 27% 0px 0px 30px;width: 45%;">
+                    <img id="left" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/indicador.png?raw=true" alt=""/>
+                    <p id="medium">É possível definir metas mensais de páginas lidas e analisar o ritmo de leitura dos últimos 6 meses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>ÉTICA E SENSIBILIDADES HUMANAS</h2>
+        <div class="contentPlain">
+            <p>Ao longo do projeto fizemos um estudo sobre ética e sensibilidades humanas com o objetivo de transformar o Marca-página em um aplicativo que respeite mais a natureza humana e consiga realmente se tornar uma ferramenta benéfica para seus usuários, e não mais uma fonte de estresse e ansiedade.</p>
+        </div>
+        <div class="columns">
+            <div class="contentPlainTwoColumn">
+                <p>Para fazer o estudo seguimos o roteiro proposto pelo CHT (Center for Humane Technology) e conseguimos identificar duas sensibilidades que poderiam ser trabalhadas dentro do limite de tempo do projeto e que melhorariam muito, tanto do ponto de vista ético quanto da experiência do usuário, as features propostas no app além de gerar mais valor para o projeto.
+                <br/><br/><br/>
+                <b>Trabalhamos com 2 frentes: Dinâmicas de grupo e Emocional.</b></p>
+            </div>
+            <img id="imgCHT" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/CHT1.png?raw=true" alt=""/>
+        </div>
+        <div class="contentSub" style="margin-bottom: 120px;">
+            <h2>Dinâmicas de grupo</h2>
+             <div id="oneColumn">
+                <p>A princípio não possuíamos nenhuma forma de moderação de conteúdo nem em comentários e avaliações de usuários, nem em relação a livros com trechos questionáveis, o que pode permitir o cultivo de discursos de ódio e preconceitos.<br/><br/><br/>Como desejamos promover mais diversidade na leitura, nos preocupamos muito e fomos cuidadosos com esta sensibilidade humana. Algumas das features implementadas foram a denúncia de comentários e livros com trechos questionáveis, filtro de palavras sensíveis e aviso de spoiler em comentários.<br/><br/></p>
+            </div>
+            <div id="twoColumn">
+                <p><b>A principal feature criada com o objetivo de minimizar os impactos negativos de obras preconceituosas foi o aviso sobre livros com trechos questionáveis, a qual tem o objetivo de incentivar a leitura crítica dessas obras a partir da contextualização do livro e explicação e opinião de especialistas sobre o tema, de forma que o leitor seja instigado a se educar sobre o assunto e ler a história questionando passagens preconceituosas e questionáveis.</b></p>
+            </div>
+            <div class="trechosQuest">
+                 <img id="imgEmilia" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/Emilia.png?raw=true" alt=""/>
+                <video id="videoML" autoplay muted loop>
+                    <source src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/ML.mp4?raw=true" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="indicator" style="margin: 27% 0px 0px 5%;width: 42%;">
+                <p id="medium">A partir do momento que um usuário denuncia uma obra ela passa a ser analisada para que, se confirmada a presença de trechos questionáveis, ela passe a exibir mais informações sobre o assunto.</p>
+                <img id="right" src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/indicador.png?raw=true" alt="" style="width: 20%;"/>
+            </div>
+        </div>
+    </section>
+    <section class="imageSection" style="margin-top: 27%;">
+        <img src="https://github.com/manubvf/assets_portfolio/blob/main/Marca-pagina/sectionIllustration.png?raw=true" alt=""/>
+    </section>
+    <section>
+        <h2>REFLEXÃO</h2>
+        <div class="contentPlain">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla, ex eu sodales viverra, nisi turpis scelerisque lectus, quis pulvinar ligula nisl in est. Sed commodo auctor efficitur. Nullam fermentum gravida mollis.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla, ex eu sodales viverra, nisi turpis scelerisque lectus, quis pulvinar ligula nisl in est. Sed commodo auctor efficitur. Nullam fermentum gravida mollis.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla, ex eu sodales viverra, nisi turpis scelerisque lectus, quis pulvinar ligula nisl in est. Sed commodo auctor efficitur. Nullam fermentum gravida mollis.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla, ex eu sodales viverra, nisi turpis scelerisque lectus, quis pulvinar ligula nisl in est. Sed commodo auctor efficitur. Nullam fermentum gravida mollis.</p>
+        </div>
+    </section>
+    <section class="footer">
+        <h2>MAIS PROJETOS</h2>
+        <div class="contentPlain">
+            
+        </div>
+    </section>
+    
+    <script>
+    new Splide( '#image-carousel' ).mount();
+            
+    function openNav() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+</script>
+</body>
+</html>
+
+    
